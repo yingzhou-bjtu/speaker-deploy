@@ -1,0 +1,8 @@
+{
+  "model_id": "iic/speech_eres2netv2w24s4ep4_sv_zh-cn_16k-common",
+  "onnx_file": "eres2net_sv.onnx",
+  "embedding_dim": 192,
+  "sample_rate_hz": 16000,
+  "feature": "80-dim FBank, mean-normalized per utterance",
+  "note_zh": "板端 deploy 目录内 ONNX 声纹权重"
+}

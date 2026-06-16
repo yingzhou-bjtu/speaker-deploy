@@ -1,0 +1,10 @@
+# 安装顺序见 setup_board_deps.sh，不要单独 pip install hdbscan，会把 numpy 升到 2.x。
+numpy==1.26.4
+scipy==1.11.4
+scikit-learn==1.5.2
+hdbscan==0.8.42
+onnxruntime>=1.16
+kaldi-native-fbank>=1.20
+soundfile>=0.12
+# 仅 serve 加 redis 或 push 子命令时需要。
+redis>=4.5
