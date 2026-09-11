@@ -6,8 +6,12 @@ speaker-clustering study in `speaker-deploy`.
 ## Contents
 
 - `研究动机与贡献.md`: problem statement and intended paper positioning.
-- `HDBSCAN流式折中算法_理论与证明草案.md`: connected assumptions, geometric
-  lemmas, prefix-consistency theorem, and conditional tradeoff optimality.
+- `HDBSCAN流式折中算法_idea审查.md`: novelty, scope, positioning, and
+  reviewer-facing risk assessment.
+- `HDBSCAN流式折中算法_理论与证明草案.md`: geometry-certified,
+  risk-constrained selective reclustering theory, including geometric
+  certificates, prefix-consistency, gate optimality, and the outer system
+  optimization problem.
 - `HDBSCAN流式折中算法_实验记录.md`: experiment log and metric definitions.
 - `scripts/`: benchmark, data preparation, validation, and plotting scripts.
 - `data/`: synthetic streams and small embedding fixtures. Raw FSDD audio is
