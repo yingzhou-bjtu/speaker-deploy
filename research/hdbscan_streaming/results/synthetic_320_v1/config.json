@@ -1,0 +1,17 @@
+{
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/synthetic_320.npz",
+  "n": 320,
+  "dim": 64,
+  "methods": [
+    "full_hdbscan",
+    "compressed_hdbscan",
+    "window_hdbscan",
+    "fishdbc",
+    "approx_predict"
+  ],
+  "cap": 80,
+  "warmup": 60,
+  "min_cluster_size": 5,
+  "min_samples": 2,
+  "checkpoint_every": 20
+}

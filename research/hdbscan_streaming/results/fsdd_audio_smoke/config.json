@@ -1,0 +1,23 @@
+{
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/embeddings/fsdd_smoke.npz",
+  "n": 30,
+  "dim": 192,
+  "embedding_preprocess": "l2_row_normalize",
+  "methods": [
+    "full_hdbscan",
+    "adaptive_tradeoff",
+    "fishdbc",
+    "ahc",
+    "sc_pna",
+    "diart_style"
+  ],
+  "cap": 20,
+  "warmup": 12,
+  "tradeoff_warmup": 12,
+  "tradeoff_margin": 0.02,
+  "tradeoff_max_distance": 0.7,
+  "tradeoff_full_interval": 4,
+  "min_cluster_size": 3,
+  "min_samples": 2,
+  "checkpoint_every": 6
+}

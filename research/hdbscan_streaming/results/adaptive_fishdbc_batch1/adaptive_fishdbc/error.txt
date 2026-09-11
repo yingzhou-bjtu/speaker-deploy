@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/user/Desktop/paper/hdbscan_streaming_bench/scripts/run_benchmark.py", line 833, in run_one
+    active_x, active_y, step_ms, action = method.update(x, int(yi))
+  File "/home/user/Desktop/paper/hdbscan_streaming_bench/scripts/run_benchmark.py", line 535, in update
+    reps, rep_labels = self._representatives()
+AttributeError: 'AdaptiveFishdbcBatch' object has no attribute '_representatives'

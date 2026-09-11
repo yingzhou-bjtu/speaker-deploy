@@ -1,0 +1,18 @@
+{
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/synthetic_smoke.npz",
+  "n": 120,
+  "dim": 32,
+  "methods": [
+    "full_hdbscan",
+    "compressed_hdbscan",
+    "window_hdbscan",
+    "fishdbc",
+    "approx_predict",
+    "fast_hdbscan"
+  ],
+  "cap": 40,
+  "warmup": 40,
+  "min_cluster_size": 4,
+  "min_samples": 2,
+  "checkpoint_every": 10
+}

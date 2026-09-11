@@ -1,0 +1,27 @@
+{
+  "method": "approx_predict",
+  "status": "ok",
+  "n_input": 120,
+  "wall_ms": 58.232301962561905,
+  "mean_step_ms": 0.1673726956748093,
+  "p95_step_ms": 0.2697527117561549,
+  "peak_python_mb": 0.30503082275390625,
+  "recompute_count": 1,
+  "prediction_count": 81,
+  "final": {
+    "step": 120,
+    "step_ms": 0.1962499227374792,
+    "action": "approx_predict",
+    "active_points": 120,
+    "evaluation_points": 120,
+    "recompute_count": 1,
+    "prediction_count": 81,
+    "cluster_count": 5,
+    "pairwise_precision": 0.0,
+    "pairwise_recall": 0.0,
+    "false_merge_rate": 0.15294117647058825,
+    "coverage": 0.8833333333333333,
+    "ari": 0.0,
+    "nmi": 0.5406278649819208
+  }
+}

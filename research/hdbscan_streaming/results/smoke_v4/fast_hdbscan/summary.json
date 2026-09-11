@@ -1,0 +1,6 @@
+{
+  "method": "fast_hdbscan",
+  "status": "failed",
+  "error": "ModuleNotFoundError: No module named 'numba'",
+  "wall_ms": 13.081746059469879
+}

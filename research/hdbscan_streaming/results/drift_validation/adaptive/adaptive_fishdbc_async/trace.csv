@@ -1,0 +1,5 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+80,0.4859269829466939,adaptive_fishdbc_async_buffer,80,80,20,0,240,60,0,0,60,0,214.054947020486,24.83160502742976,4,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+160,0.28595607727766037,adaptive_fishdbc_async_buffer,160,160,39,0,560,140,0,0,140,0,479.77427556179464,24.83160502742976,4,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+240,0.18592097330838442,adaptive_fishdbc_async_risk_flush,240,240,87,0,880,183,0,37,183,0,848.5281934263185,24.83160502742976,4,4,0.8333333333333334,0.970873786407767,0.85,0.9417755572636434,0.9647637795275591,0.012838983050847458,0.8583333333333333,0.9105958832649006,0.8869392034168376
+320,0.38022594526410103,finalize,320,320,107,0,1520,263,0,37,263,0,1183.089389349334,24.83160502742976,4,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0

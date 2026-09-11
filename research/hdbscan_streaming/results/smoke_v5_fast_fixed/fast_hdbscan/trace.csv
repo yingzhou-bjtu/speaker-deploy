@@ -1,0 +1,13 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,cluster_count,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+10,64.34877403080463,fast_full_recluster,10,0,10,0,0,0.0,0.0,0.0,0.0,0.0,0.0
+20,86.32478804793209,fast_full_recluster,20,0,20,0,2,0.0,0.0,0.0,0.0,0.0,0.0
+30,48.297767993062735,fast_full_recluster,30,0,30,0,4,0.0,0.0,0.0,0.0,0.0,0.0
+40,92.69820293411613,fast_full_recluster,40,0,40,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+50,64.015984069556,fast_full_recluster,50,0,50,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+60,147.45973201934248,fast_full_recluster,60,0,60,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+70,102.16769902035594,fast_full_recluster,70,0,70,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+80,88.73139892239124,fast_full_recluster,80,0,80,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+90,49.17441599536687,fast_full_recluster,90,0,90,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+100,97.01372706331313,fast_full_recluster,100,0,100,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+110,119.01410506106913,fast_full_recluster,110,0,110,0,5,0.0,0.0,0.0,0.0,0.0,0.0
+120,79.4132238952443,fast_full_recluster,120,0,120,0,5,0.0,0.0,0.0,0.0,0.0,0.0

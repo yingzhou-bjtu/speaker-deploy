@@ -1,0 +1,35 @@
+[
+  {
+    "method": "full_hdbscan",
+    "status": "ok",
+    "n_input": 30,
+    "wall_ms": 1607.3240799596533,
+    "mean_step_ms": 53.08416580082849,
+    "p95_step_ms": 1.3706771947909144,
+    "cold_start_steps_excluded": 1,
+    "steady_mean_step_ms": 54.914192172120615,
+    "steady_p95_step_ms": 1.3751348480582235,
+    "peak_python_mb": 44.857540130615234,
+    "recompute_count": 30,
+    "prediction_count": 0,
+    "final": {
+      "step": 30,
+      "step_ms": 1.1866099666804075,
+      "action": "full_recluster",
+      "active_points": 30,
+      "evaluation_points": 30,
+      "recompute_count": 30,
+      "prediction_count": 0,
+      "cluster_count": 5,
+      "cluster_accuracy": 0.7333333333333333,
+      "cluster_accuracy_non_noise": 0.9565217391304348,
+      "cluster_accuracy_noise_singletons": 0.7666666666666667,
+      "pairwise_precision": 0.8837209302325582,
+      "pairwise_recall": 0.6333333333333333,
+      "false_merge_rate": 0.013333333333333334,
+      "coverage": 0.7666666666666667,
+      "ari": 0.6614785992217899,
+      "nmi": 0.805239207182306
+    }
+  }
+]

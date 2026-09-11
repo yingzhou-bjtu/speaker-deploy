@@ -1,0 +1,6 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+6,0.009234994649887085,adaptive_fishdbc_async_warmup,6,6,0,0,0,0,0,0,0,0,0.0,0.0,0,0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+12,0.020824954845011234,adaptive_fishdbc_async_warmup,12,12,0,0,0,0,0,0,0,0,0.0,0.0,0,0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0
+18,0.017494079656898975,adaptive_fishdbc_async_risk_flush,18,18,1,0,0,0,0,6,0,0,1.8420839915052056,1.8420839915052056,4,0,0.0,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0
+24,0.016391975805163383,adaptive_fishdbc_async_risk_flush,24,24,3,0,0,0,0,12,0,0,7.009586901403964,3.940120921470225,4,0,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0
+30,0.018598046153783798,finalize,30,30,21,0,0,0,0,18,0,0,32.50877989921719,3.940120921470225,4,5,0.7333333333333333,1.0,0.7666666666666667,1.0,0.6333333333333333,0.0,0.7333333333333333,0.7216890595009597,0.8487701009921764

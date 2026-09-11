@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/user/Desktop/paper/hdbscan_streaming_bench/scripts/run_benchmark.py", line 353, in run_one
+    active_x, active_y, step_ms, action = method.update(x, int(yi))
+  File "/home/user/Desktop/paper/hdbscan_streaming_bench/scripts/run_benchmark.py", line 313, in update
+    self.labels = _fit_labels(
+  File "/home/user/Desktop/paper/hdbscan_streaming_bench/scripts/run_benchmark.py", line 63, in _fit_labels
+    import fast_hdbscan
+  File "/home/user/Desktop/paper/references/hdbscan_acceleration/code/extracted/fast-hdbscan-main/fast_hdbscan-main/fast_hdbscan/__init__.py", line 1, in <module>
+    from .hdbscan import HDBSCAN, fast_hdbscan, PLSCAN
+  File "/home/user/Desktop/paper/references/hdbscan_acceleration/code/extracted/fast-hdbscan-main/fast_hdbscan-main/fast_hdbscan/hdbscan.py", line 2, in <module>
+    import numba
+ModuleNotFoundError: No module named 'numba'

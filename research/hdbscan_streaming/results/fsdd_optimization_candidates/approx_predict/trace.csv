@@ -1,0 +1,6 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+6,0.010755029506981373,approx_predict,6,6,0,0,0,0,0,0,0,0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+12,1.7036000499501824,approx_predict,12,12,1,0,0,0,0,0,0,0,0.0,0.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0
+18,0.041301012970507145,approx_predict,18,18,1,6,0,0,0,0,0,0,0.0,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0
+24,0.03750994801521301,approx_predict,24,24,1,12,0,0,0,0,0,0,0.0,0.0,0.25,0.0,0.0,0.0,0.0,0.0,0.0
+30,0.028687063604593277,approx_predict,30,30,1,18,0,0,0,0,0,0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0

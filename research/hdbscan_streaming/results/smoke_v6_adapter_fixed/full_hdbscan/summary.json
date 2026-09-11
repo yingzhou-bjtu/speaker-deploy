@@ -1,0 +1,27 @@
+{
+  "method": "full_hdbscan",
+  "status": "ok",
+  "n_input": 120,
+  "wall_ms": 4467.0182230183855,
+  "mean_step_ms": 36.41202739769748,
+  "p95_step_ms": 12.360930774593724,
+  "peak_python_mb": 44.94008731842041,
+  "recompute_count": 120,
+  "prediction_count": 0,
+  "final": {
+    "step": 120,
+    "step_ms": 18.02160101942718,
+    "action": "full_recluster",
+    "active_points": 120,
+    "evaluation_points": 120,
+    "recompute_count": 120,
+    "prediction_count": 0,
+    "cluster_count": 5,
+    "pairwise_precision": 1.0,
+    "pairwise_recall": 0.8855072463768116,
+    "false_merge_rate": 0.0,
+    "coverage": 0.9416666666666667,
+    "ari": 0.9192536839256508,
+    "nmi": 0.9146648331760384
+  }
+}

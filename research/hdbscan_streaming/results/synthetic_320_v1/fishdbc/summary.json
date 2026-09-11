@@ -1,0 +1,27 @@
+{
+  "method": "fishdbc",
+  "status": "ok",
+  "n_input": 320,
+  "wall_ms": 1937.418042914942,
+  "mean_step_ms": 5.852935502844048,
+  "p95_step_ms": 10.215726785827428,
+  "peak_python_mb": 1.136077880859375,
+  "recompute_count": 320,
+  "prediction_count": 0,
+  "final": {
+    "step": 320,
+    "step_ms": 11.200736043974757,
+    "action": "incremental_mst_cluster",
+    "active_points": 320,
+    "evaluation_points": 320,
+    "recompute_count": 320,
+    "prediction_count": 0,
+    "cluster_count": 8,
+    "pairwise_precision": 0.0,
+    "pairwise_recall": 0.0,
+    "false_merge_rate": 0.10246865203761756,
+    "coverage": 0.915625,
+    "ari": 0.0,
+    "nmi": 0.5507986599912802
+  }
+}
