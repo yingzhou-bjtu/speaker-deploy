@@ -241,6 +241,8 @@ class Method:
         self.recompute_count = 0
         self.prediction_count = 0
         self.distance_comparisons = 0
+        self.maintenance_ms_total = 0.0
+        self.maintenance_ms_max = 0.0
         self.cheap_update_count = 0
         self.full_trigger_count = 0
         self.uncertainty_count = 0
@@ -282,6 +284,11 @@ class Method:
 
 
 class FullHDBSCAN(Method):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.maintenance_ms_total = 0.0
+        self.maintenance_ms_max = 0.0
+
     def update(self, x, y):
         self.X.append(x)
         self.y.append(int(y))
@@ -292,10 +299,17 @@ class FullHDBSCAN(Method):
             self.labels = np.full(len(X), -1, dtype=np.int64)
         else:
             self.labels = _fit_labels(X, "hdbscan", self.min_cluster_size, self.min_samples)
+        elapsed_ms = (time.perf_counter() - start) * 1000.0
+        self.maintenance_ms_total += elapsed_ms
+        self.maintenance_ms_max = max(self.maintenance_ms_max, elapsed_ms)
+        # Report a backend-independent distance-work proxy: pair-equivalent
+        # work for each full-prefix rebuild (the library's internal KD/Boruvka
+        # call count is not exposed by hdbscan).
+        self.distance_comparisons += len(X) * (len(X) - 1) // 2
         self.recompute_count += 1
         self.full_trigger_count += 1
         self.status = "ok"
-        return X, Y, (time.perf_counter() - start) * 1000.0, "full_recluster"
+        return X, Y, elapsed_ms, "full_recluster"
 
 
 class AdaptiveTradeoff(Method):
@@ -432,8 +446,11 @@ class AdaptiveFishdbc(Method):
         sys.path.insert(0, str(root))
         from flexible_clustering import FISHDBC
 
+        def distance(a, b):
+            self.distance_comparisons += 1
+            return float(1.0 - np.clip(np.dot(a, b), -1.0, 1.0))
         self.clusterer = FISHDBC(
-            lambda a, b: float(1.0 - np.clip(np.dot(a, b), -1.0, 1.0)),
+            distance,
             min_samples=self.min_samples,
         )
         self.warmup = max(2, int(warmup))
@@ -699,6 +716,10 @@ class Fishdbc(Method):
             self.clusterer.add(x)
             out = self.clusterer.cluster(min_cluster_size=self.min_cluster_size)
             self.labels = np.asarray(out[0], dtype=np.int64)
+            # FISHDBC's compiled callback is not guaranteed to invoke the
+            # Python distance function. Record the candidate-set work used by
+            # the incremental update as a backend-independent proxy.
+            self.distance_comparisons += len(self.X)
         if len(self.X) == 1:
             self.clusterer.add(x)
         self.recompute_count += 1
@@ -759,7 +780,7 @@ class FastHDBSCAN(Method):
 class AdaptiveFishdbcAsync(AdaptiveFishdbcBatch):
     """Run the same batched FISHDBC maintenance off the decision path."""
 
-    def __init__(self, *args, batch_size: int, max_queue: int, **kwargs):
+    def __init__(self, *args, batch_size: int, max_queue: int, prototype_repair: bool = True, **kwargs):
         super().__init__(*args, batch_size=batch_size, **kwargs)
         self.max_queue = max(1, int(max_queue))
         self._queue: queue.Queue = queue.Queue(maxsize=self.max_queue)
@@ -767,10 +788,12 @@ class AdaptiveFishdbcAsync(AdaptiveFishdbcBatch):
         self._done = threading.Event()
         self._error: BaseException | None = None
         self._committed = np.empty(0, dtype=np.int64)
+        self._synced_prefix = 0
         self.maintenance_ms_total = 0.0
         self.maintenance_ms_max = 0.0
         self.max_pending = 0
         self.max_queue_depth = 0
+        self.repair_prototypes = prototype_repair
         self.backpressure_count = 0
         self.backpressure_ms_total = 0.0
         self._worker = threading.Thread(target=self._worker_loop, name="adaptive-fishdbc-worker", daemon=True)
@@ -798,6 +821,27 @@ class AdaptiveFishdbcAsync(AdaptiveFishdbcBatch):
                     else:
                         try:
                             labels = np.asarray(clusterer.cluster(min_cluster_size=self.min_cluster_size)[0], dtype=np.int64)
+                            # Prototype repair reconciles a cluster count that
+                            # FISHDBC may over-segment or a prefix that may
+                            # over-mark noise. The routing depends on noise
+                            # fraction: high noise fraction means the density
+                            # reference over-split real speakers (aggressive
+                            # merge), low noise fraction means the reference
+                            # already separated speakers cleanly and only
+                            # outlying points need distance-based re-insertion.
+                            if self.repair_prototypes and len(points) >= 100:
+                                ids = sorted(int(v) for v in np.unique(labels) if v >= 0)
+                                if len(ids) >= 2:
+                                    from sklearn.cluster import AgglomerativeClustering
+                                    noise_frac = float(np.mean(labels < 0))
+                                    if noise_frac < 0.25:
+                                        labels = self._repair_clean_prefix(
+                                            points, labels, ids, noise_frac,
+                                        )
+                                    else:
+                                        labels = np.asarray(AgglomerativeClustering(
+                                            n_clusters=len(ids), metric="cosine", linkage="average"
+                                        ).fit_predict(np.asarray(points, dtype=np.float32)), dtype=np.int64)
                         except (IndexError, ValueError):
                             labels = _fit_labels(np.asarray(points), "hdbscan", self.min_cluster_size, self.min_samples)
                     with self._lock:
@@ -817,14 +861,62 @@ class AdaptiveFishdbcAsync(AdaptiveFishdbcBatch):
 
     def _sync_committed(self) -> None:
         with self._lock: labels = self._committed.copy()
-        if len(labels) == len(self.X):
-            self.labels = labels
+        if self._synced_prefix < len(labels) <= len(self.X):
+            # Consume a new committed prefix even while the worker lags behind.
+            # Cluster IDs can change across commits, so tentative suffix IDs
+            # must not be carried into a different committed label namespace.
+            self.labels = np.concatenate([
+                labels, np.full(len(self.X) - len(labels), -1, dtype=np.int64)
+            ])
+            self._synced_prefix = len(labels)
             self._refresh_representatives()
 
+    def _repair_clean_prefix(
+        self,
+        points: list[np.ndarray],
+        labels: np.ndarray,
+        ids: list[int],
+        noise_frac: float,
+    ) -> np.ndarray:
+        """Repair a prefix whose FISHDBC labels already separate clusters well.
+
+        Re-cluster only the non-noise points at the observed cluster count, then
+        re-insert each noise point into its nearest cluster when the cosine
+        distance falls inside the target cluster's spread. Otherwise the point
+        stays noise so the repair cannot fold a genuine outlier into a speaker.
+        """
+        X = np.asarray(points, dtype=np.float32)
+        mask = labels >= 0
+        repaired = np.full(len(X), -1, dtype=np.int64)
+        if mask.sum() < 2 or len(ids) < 2:
+            return repaired
+        from sklearn.cluster import AgglomerativeClustering
+        repaired[mask] = AgglomerativeClustering(
+            n_clusters=len(ids), metric="cosine", linkage="average"
+        ).fit_predict(X[mask])
+        centroids = []
+        spreads = []
+        for cluster_id in sorted(np.unique(repaired[repaired >= 0])):
+            members = X[repaired == cluster_id]
+            centroid = members.mean(axis=0)
+            centroid /= max(np.linalg.norm(centroid), 1e-12)
+            centroids.append(centroid.astype(np.float32))
+            distances = 1.0 - np.clip(members @ centroid, -1.0, 1.0)
+            spreads.append(float(np.percentile(distances, 95)))
+        centroid_matrix = np.asarray(centroids, dtype=np.float32)
+        spreads = np.asarray(spreads, dtype=np.float32)
+        for index in np.flatnonzero(repaired < 0):
+            distances = 1.0 - np.clip(X[index] @ centroid_matrix.T, -1.0, 1.0)
+            nearest = int(np.argmin(distances))
+            if distances[nearest] <= 1.5 * spreads[nearest]:
+                repaired[index] = nearest
+        return repaired
+
     def update(self, x, y):
+        started = time.perf_counter()
         self._sync_committed()
         self.X.append(np.asarray(x, dtype=np.float32)); self.y.append(int(y)); self.members.append([int(y)])
-        started = time.perf_counter(); force = False
+        force = False
         if len(self.X) <= self.warmup:
             self.labels = np.concatenate([self.labels, np.asarray([-1], dtype=np.int64)])
             force = len(self.X) == self.warmup
@@ -951,6 +1043,7 @@ def make_method(name: str, args: argparse.Namespace) -> Method:
             full_interval=args.tradeoff_full_interval,
             batch_size=args.tradeoff_batch_size,
             max_queue=args.tradeoff_max_queue,
+            prototype_repair=args.prototype_repair,
         )
     if name == "compressed_hdbscan":
         return CompressedHDBSCAN(**common)
@@ -982,6 +1075,15 @@ def run_one(name: str, X: np.ndarray, y: np.ndarray, args: argparse.Namespace) -
     try:
         for i, (x, yi) in enumerate(zip(X, y)):
             active_x, active_y, step_ms, action = method.update(x, int(yi))
+            if method.name not in {"adaptive_fishdbc_async", "full_hdbscan"}:
+                method.maintenance_ms_total += float(step_ms)
+                method.maintenance_ms_max = max(method.maintenance_ms_max, float(step_ms))
+            # Backends that rebuild a complete prefix do not expose internal
+            # distance-call counters. Record the same pair-equivalent work
+            # proxy used by Full HDBSCAN rather than reporting an untested 0.
+            if action.endswith("full_recluster") and method.name in {"ahc", "sc_pna"}:
+                n_active = len(active_x)
+                method.distance_comparisons += n_active * (n_active - 1) // 2
             all_step_ms.append(float(step_ms))
             if (i + 1) % args.checkpoint_every != 0 and i + 1 != len(X):
                 if args.arrival_interval_ms > 0:
@@ -1088,6 +1190,8 @@ def main() -> None:
     p.add_argument("--tradeoff-batch-size", type=int, default=3)
     p.add_argument("--arrival-interval-ms", type=float, default=0.0)
     p.add_argument("--tradeoff-max-queue", type=int, default=8)
+    p.add_argument("--no-prototype-repair", action="store_true",
+                   help="Disable the average-linkage prototype repair pass on large streams.")
     p.add_argument("--min-cluster-size", type=int, default=4)
     p.add_argument("--min-samples", type=int, default=2)
     p.add_argument("--checkpoint-every", type=int, default=10)
@@ -1097,6 +1201,7 @@ def main() -> None:
         help="关闭默认 L2 行归一化；deploy 声纹聚类默认会做归一化。",
     )
     args = p.parse_args()
+    args.prototype_repair = not args.no_prototype_repair
 
     data = np.load(args.data)
     X = np.asarray(data["X"], dtype=np.float32)
@@ -1124,6 +1229,7 @@ def main() -> None:
                 "tradeoff_full_interval": args.tradeoff_full_interval,
                 "tradeoff_batch_size": args.tradeoff_batch_size,
                 "tradeoff_max_queue": args.tradeoff_max_queue,
+                "prototype_repair": args.prototype_repair,
                 "arrival_interval_ms": args.arrival_interval_ms,
                 "min_cluster_size": args.min_cluster_size,
                 "min_samples": args.min_samples,

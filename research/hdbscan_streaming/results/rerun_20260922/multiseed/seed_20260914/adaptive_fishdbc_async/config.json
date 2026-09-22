@@ -1,0 +1,22 @@
+{
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/rerun_20260922/multiseed/data_seed_20260914.npz",
+  "n": 320,
+  "dim": 64,
+  "embedding_preprocess": "l2_row_normalize",
+  "methods": [
+    "adaptive_fishdbc_async"
+  ],
+  "cap": 100,
+  "warmup": 20,
+  "tradeoff_warmup": 20,
+  "tradeoff_margin": 0.02,
+  "tradeoff_max_distance": 0.7,
+  "tradeoff_full_interval": 8,
+  "tradeoff_batch_size": 4,
+  "tradeoff_max_queue": 8,
+  "prototype_repair": true,
+  "arrival_interval_ms": 5.0,
+  "min_cluster_size": 3,
+  "min_samples": 2,
+  "checkpoint_every": 80
+}

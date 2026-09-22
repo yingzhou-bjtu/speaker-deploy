@@ -1,0 +1,12 @@
+{
+  "audit": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419",
+  "main_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables/canonical_main.csv",
+  "multiseed_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables/canonical_multiseed.csv",
+  "rate_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables/canonical_rate.csv",
+  "tradeoff_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables/canonical_tradeoff.csv",
+  "figures": [
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_figures/fig_main_results.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_figures/fig_stability_rate.pdf"
+  ],
+  "status": "ok"
+}

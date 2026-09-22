@@ -1,0 +1,5 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,max_queue_depth,backpressure_count,backpressure_ms_total,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+80,0.26949704624712467,tradeoff_cached_assign,80,80,8,0,240,60,8,0,60,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+160,0.2257340820506215,tradeoff_cached_assign,160,160,18,0,560,140,18,0,140,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+240,0.28315803501755,tradeoff_cached_assign,240,240,38,0,1094,207,38,13,207,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+320,0.40316395461559296,finalize,320,320,48,0,1734,287,48,13,287,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0

@@ -13,12 +13,13 @@ def unit(x: np.ndarray) -> np.ndarray:
     return x / np.maximum(np.linalg.norm(x), 1e-12)
 
 
-def build_stream(speakers: int, points: int, dim: int, seed: int, drift: float, noise: float):
+def build_stream(speakers: int, points: int, dim: int, seed: int, drift: float, noise: float,
+                 max_center_similarity: float = 0.45):
     rng = np.random.default_rng(seed)
     centers = []
     while len(centers) < speakers:
         candidate = unit(rng.normal(size=dim))
-        if all(float(candidate @ c) < 0.45 for c in centers):
+        if all(float(candidate @ c) < max_center_similarity for c in centers):
             centers.append(candidate)
     directions = [unit(rng.normal(size=dim)) for _ in range(speakers)]
     rows, labels = [], []
@@ -32,6 +33,7 @@ def build_stream(speakers: int, points: int, dim: int, seed: int, drift: float, 
         labels.append(sid)
     meta = {"seed": seed, "speakers": speakers, "points": points, "dim": dim,
             "drift": drift, "noise": noise, "late_speakers": speakers - 4,
+            "max_center_similarity": max_center_similarity,
             "order": "first four speakers, then late speakers with gradual drift"}
     return np.asarray(rows), np.asarray(labels, dtype=np.int64), meta
 
@@ -46,8 +48,10 @@ def main() -> None:
     p.add_argument("--seed", type=int, default=20260911)
     p.add_argument("--drift", type=float, default=0.20)
     p.add_argument("--noise", type=float, default=0.12)
+    p.add_argument("--max-center-similarity", type=float, default=0.45)
     args = p.parse_args()
-    X, y, meta = build_stream(args.speakers, args.points, args.dim, args.seed, args.drift, args.noise)
+    X, y, meta = build_stream(args.speakers, args.points, args.dim, args.seed, args.drift,
+                               args.noise, args.max_center_similarity)
     args.out.parent.mkdir(parents=True, exist_ok=True); args.meta.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(args.out, X=X, y=y)
     meta = {**meta, "n": int(len(y)), "out": str(args.out.resolve())}

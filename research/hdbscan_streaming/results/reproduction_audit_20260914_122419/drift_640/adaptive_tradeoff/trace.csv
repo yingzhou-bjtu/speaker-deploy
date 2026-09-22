@@ -1,0 +1,9 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,max_queue_depth,backpressure_count,backpressure_ms_total,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+80,0.42655901052057743,tradeoff_cached_assign,80,80,8,0,240,60,8,0,60,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+160,0.905881985090673,tradeoff_cached_assign,160,160,18,0,560,140,18,0,140,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+240,0.2802700037136674,tradeoff_cached_assign,240,240,28,0,880,220,28,0,220,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+320,0.6154379807412624,tradeoff_cached_assign,320,320,38,0,1200,300,38,0,300,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+400,29.574549989774823,tradeoff_uncertainty_full,400,400,58,0,1750,368,58,12,368,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+480,34.328244044445455,tradeoff_uncertainty_full,480,480,68,0,2390,448,68,12,448,0,0.0,0.0,0,0,0,0.0,8,0.9979166666666667,1.0,0.9979166666666667,1.0,0.9990758754863813,0.0,0.9979166666666667,0.9994370987024324,0.9977535286413973
+560,38.45695697236806,tradeoff_uncertainty_full,560,560,78,0,3030,528,78,12,528,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+640,35.932252067141235,finalize,640,640,88,0,3670,608,88,12,608,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0

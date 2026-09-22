@@ -1,0 +1,28 @@
+{
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/medium/embeddings.npz",
+  "n": 300,
+  "dim": 192,
+  "embedding_preprocess": "l2_row_normalize",
+  "methods": [
+    "full_hdbscan",
+    "fishdbc",
+    "adaptive_fishdbc",
+    "adaptive_fishdbc_async",
+    "ahc",
+    "sc_pna",
+    "diart_style"
+  ],
+  "cap": 100,
+  "warmup": 20,
+  "tradeoff_warmup": 20,
+  "tradeoff_margin": 0.02,
+  "tradeoff_max_distance": 0.7,
+  "tradeoff_full_interval": 8,
+  "tradeoff_batch_size": 4,
+  "tradeoff_max_queue": 8,
+  "prototype_repair": true,
+  "arrival_interval_ms": 5.0,
+  "min_cluster_size": 3,
+  "min_samples": 6,
+  "checkpoint_every": 80
+}

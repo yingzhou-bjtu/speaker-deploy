@@ -1,0 +1,47 @@
+{
+  "audit": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419",
+  "main_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_code_style/canonical_main.csv",
+  "multiseed_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_code_style/canonical_multiseed.csv",
+  "rate_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_code_style/canonical_rate.csv",
+  "tradeoff_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_code_style/canonical_tradeoff.csv",
+  "figures": [
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_code_style/fig_latency.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_code_style/fig_quality.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_code_style/fig_repeatability.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_code_style/fig_arrival_rate.pdf"
+  ],
+  "figure_style": {
+    "reference": "LoongX_SIGCOMM2026 visual language",
+    "font_family": "sans-serif",
+    "plot_types": [
+      "bar",
+      "line"
+    ],
+    "method_display": {
+      "baseline": "FISHDBC",
+      "ours": "FlowFish"
+    },
+    "figure_size_in": [
+      7.0,
+      2.72
+    ],
+    "colors": {
+      "full": "#6B6B6B",
+      "fish": "#F28E2B",
+      "ours": "#3474ED",
+      "orange": "#F28E2B",
+      "purple": "#7A52CC",
+      "pink": "#E64B8A",
+      "grid": "#BDBDBD",
+      "text": "#000000"
+    },
+    "export_dpi": 300,
+    "active_figures": [
+      "fig_latency.pdf",
+      "fig_quality.pdf",
+      "fig_repeatability.pdf",
+      "fig_arrival_rate.pdf"
+    ]
+  },
+  "status": "ok"
+}

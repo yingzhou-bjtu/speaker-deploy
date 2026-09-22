@@ -1,0 +1,9 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,max_queue_depth,backpressure_count,backpressure_ms_total,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+80,3.4970520064234734,ahc_full_recluster,80,80,80,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+160,3.3356660278514028,ahc_full_recluster,160,160,160,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+240,1.8995809368789196,ahc_full_recluster,240,240,240,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+320,2.7618110179901123,ahc_full_recluster,320,320,320,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+400,4.2606600327417254,ahc_full_recluster,400,400,400,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+480,4.74292307626456,ahc_full_recluster,480,480,480,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+560,5.732102086767554,ahc_full_recluster,560,560,560,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+640,7.681192015297711,finalize,640,640,640,0,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0

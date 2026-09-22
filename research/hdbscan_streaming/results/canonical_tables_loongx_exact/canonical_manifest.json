@@ -1,0 +1,50 @@
+{
+  "audit": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419",
+  "main_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_exact/canonical_main.csv",
+  "multiseed_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_exact/canonical_multiseed.csv",
+  "rate_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_exact/canonical_rate.csv",
+  "tradeoff_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_tables_loongx_exact/canonical_tradeoff.csv",
+  "figures": [
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_exact/fig_latency.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_exact/fig_quality.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_exact/fig_repeatability.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/canonical_figures_loongx_exact/fig_arrival_rate.pdf"
+  ],
+  "figure_style": {
+    "reference": "LoongX_SIGCOMM2026 visual language",
+    "font_family": "sans-serif",
+    "plot_types": [
+      "bar",
+      "line"
+    ],
+    "method_display": {
+      "baseline": "FISHDBC",
+      "ours": "FlowFish"
+    },
+    "latex_placement": "figure[t] with two minipage[t]{0.49\\linewidth} blocks and captionof{figure}",
+    "figure_size_in": [
+      4.78,
+      3.75
+    ],
+    "colors": {
+      "full": "#000000",
+      "fish": "#F9413D",
+      "ours": "#3071F4",
+      "orange": "#FF9900",
+      "purple": "#886ABE",
+      "pink": "#F781BE",
+      "teal": "#3DB19E",
+      "cyan": "#00D2CD",
+      "grid": "#C7C7C7",
+      "text": "#000000"
+    },
+    "export_dpi": 300,
+    "active_figures": [
+      "fig_latency.pdf",
+      "fig_quality.pdf",
+      "fig_repeatability.pdf",
+      "fig_arrival_rate.pdf"
+    ]
+  },
+  "status": "ok"
+}

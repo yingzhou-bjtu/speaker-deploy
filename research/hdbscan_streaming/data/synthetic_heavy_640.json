@@ -1,0 +1,13 @@
+{
+  "seed": 20260911,
+  "speakers": 8,
+  "points": 640,
+  "dim": 64,
+  "drift": 0.3,
+  "noise": 0.18,
+  "late_speakers": 4,
+  "max_center_similarity": 0.6,
+  "order": "first four speakers, then late speakers with gradual drift",
+  "n": 640,
+  "out": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/synthetic_heavy_640.npz"
+}

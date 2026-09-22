@@ -1,0 +1,27 @@
+{
+  "dataset": "Free Spoken Digit Dataset",
+  "source_repository": "https://github.com/Jakobovski/free-spoken-digit-dataset",
+  "raw_root": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/raw/free-spoken-digit-dataset-master/recordings",
+  "raw_wav_count": 3000,
+  "selected_wav_count": 600,
+  "seed": 20260911,
+  "per_speaker": 100,
+  "speakers": [
+    "george",
+    "jackson",
+    "lucas",
+    "nicolas",
+    "theo",
+    "yweweler"
+  ],
+  "speaker_to_id": {
+    "george": 0,
+    "jackson": 1,
+    "lucas": 2,
+    "nicolas": 3,
+    "theo": 4,
+    "yweweler": 5
+  },
+  "manifest": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/heavy/manifest.csv",
+  "selection_order": "round-robin by speaker after seeded per-speaker sampling"
+}

@@ -1,0 +1,9 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,max_queue_depth,backpressure_count,backpressure_ms_total,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+80,0.38172805216163397,diart_style_online_assign,80,80,0,0,310,80,0,0,80,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+160,0.8153630187734962,diart_style_online_assign,160,160,0,0,630,160,0,0,160,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+240,0.7283630548045039,diart_style_online_assign,240,240,0,0,950,240,0,0,240,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+320,0.9133010171353817,diart_style_online_assign,320,320,0,0,1270,320,0,0,320,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+400,0.2652269322425127,diart_style_online_assign,400,400,0,0,1884,400,0,0,400,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+480,0.29939296655356884,diart_style_online_assign,480,480,0,0,2524,480,0,0,480,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+560,1.371713005937636,diart_style_online_assign,560,560,0,0,3164,560,0,0,560,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+640,1.4647310599684715,finalize,640,640,0,0,3804,640,0,0,640,0,0.0,0.0,0,0,0,0.0,8,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0

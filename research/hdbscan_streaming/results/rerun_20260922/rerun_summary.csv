@@ -1,0 +1,11 @@
+group,key,mean,p95,acc,ari,nmi,fmr,recomp
+async,fsdd_adaptive,0.28238,0.69272,0.76667,0.72169,0.84877,0.0,12
+async,fsdd_fishdbc,1.07705,1.44465,0.76667,0.72169,0.84877,0.0,30
+async,synthetic_adaptive,0.50064,1.28437,0.9375,0.91498,0.92027,0.0,94
+async,synthetic_fishdbc,5.03912,8.85833,0.91563,0.87806,0.89602,0.0,320
+synthetic_S320,adaptive_fishdbc_async,0.44251,1.19265,0.9375,0.91498,0.92027,0.0,94
+synthetic_S320,fishdbc,5.05946,8.55762,0.91563,0.87806,0.89602,0.0,320
+synthetic_D320,adaptive_fishdbc_async,0.43477,1.15331,1.0,1.0,1.0,0.0,90
+synthetic_D320,fishdbc,5.02972,8.7541,1.0,1.0,1.0,0.0,320
+synthetic_D640,adaptive_fishdbc_async,0.9495,3.93594,1.0,1.0,1.0,0.0,172
+synthetic_D640,fishdbc,10.0394,19.3461,0.99687,0.99858,0.99683,0.0,640

@@ -1,0 +1,4 @@
+results/adaptive_fishdbc_batch1/adaptive_fishdbc/error.txt
+results/adaptive_fishdbc_batch3/adaptive_fishdbc/error.txt
+results/fsdd_optimization_candidates/adaptive_fishdbc/error.txt
+results/smoke_v4/fast_hdbscan/error.txt

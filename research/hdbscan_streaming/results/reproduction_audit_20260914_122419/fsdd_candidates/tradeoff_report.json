@@ -1,0 +1,15 @@
+{
+  "comparison": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/fsdd_candidates/compare_to_full.csv",
+  "plot": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/fsdd_candidates/tradeoff_report.png",
+  "pdf": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/fsdd_candidates/tradeoff_report.pdf",
+  "methods": [
+    "full_hdbscan",
+    "adaptive_tradeoff",
+    "adaptive_fishdbc",
+    "fishdbc",
+    "ahc",
+    "sc_pna",
+    "diart_style"
+  ],
+  "adaptive_trace": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/fsdd_candidates/adaptive_tradeoff/trace.csv"
+}

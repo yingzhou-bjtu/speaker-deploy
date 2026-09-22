@@ -1,0 +1,13 @@
+{
+  "seed": 20260922,
+  "speakers": 8,
+  "points_per_speaker": 640,
+  "dim": 64,
+  "mode_scale": 0.1,
+  "noise_scale": 0.16,
+  "outlier_rate": 0.05,
+  "order": "seeded random interleaving",
+  "embedding_geometry": "unit-normalized Euclidean, cosine-related",
+  "n": 5120,
+  "out": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/scale/synthetic_scale_5120.npz"
+}

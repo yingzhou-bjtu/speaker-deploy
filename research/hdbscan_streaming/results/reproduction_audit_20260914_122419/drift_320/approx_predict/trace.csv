@@ -1,0 +1,5 @@
+step,step_ms,action,active_points,evaluation_points,recompute_count,prediction_count,distance_comparisons,cheap_update_count,full_trigger_count,uncertainty_count,local_update_count,fallback_full_count,maintenance_ms_total,maintenance_ms_max,max_pending,max_queue_depth,backpressure_count,backpressure_ms_total,cluster_count,cluster_accuracy,cluster_accuracy_non_noise,cluster_accuracy_noise_singletons,pairwise_precision,pairwise_recall,false_merge_rate,coverage,ari,nmi
+80,0.9443579474464059,approx_predict,80,80,1,60,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+160,0.27502502780407667,approx_predict,160,160,1,140,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+240,0.3315740032121539,approx_predict,240,240,1,220,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,0.8333333333333334,0.9852216748768473,0.85,0.9703029103147891,0.9647637795275591,0.006355932203389831,0.8458333333333333,0.9216802232224699,0.911805986978405
+320,0.3705420531332493,finalize,320,320,1,300,0,0,0,0,0,0,0.0,0.0,0,0,0,0.0,4,0.75,0.967741935483871,0.7625,0.936566671071759,0.903954081632653,0.011111111111111112,0.775,0.8287900977239395,0.8618978704580424

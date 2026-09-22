@@ -1,0 +1,24 @@
+{
+  "manifest": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/medium/manifest.csv",
+  "raw_root": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/raw/free-spoken-digit-dataset-master/recordings",
+  "model": "/home/user/Desktop/paper/deploy/pretrained/eres2net_sv.onnx",
+  "model_sha256": "f847806875d4228d1464e83e2e1092fc318e008a9ae18d9d67e5aee87b841fbc",
+  "manifest_sha256": "d35823eb0812eeb238f8e00ca6fbd8649394fde9920a90eba0f7a2e120b87a07",
+  "n": 300,
+  "dim": 192,
+  "speakers": [
+    "george",
+    "jackson",
+    "lucas",
+    "nicolas",
+    "theo",
+    "yweweler"
+  ],
+  "sample_rate_hz": 16000,
+  "ort_threads": 2,
+  "embedding_ms_mean": 58.15833241019087,
+  "embedding_ms_p95": 90.3316929587163,
+  "embedding_ms_min": 26.094860048033297,
+  "embedding_ms_max": 132.44011101778597,
+  "output": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/medium/embeddings.npz"
+}

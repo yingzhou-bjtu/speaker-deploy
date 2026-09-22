@@ -1,0 +1,7 @@
+The locked benchmark venv passes `pip check` but does not contain the
+requirements.txt package `matplotlib>=3.7`.
+
+Plot scripts were executed successfully with the system Python 3.10.12,
+which provides matplotlib 3.10.9. The venv lock therefore describes the
+actual benchmark runtime, while the system interpreter was used only for
+CSV-to-figure rendering.

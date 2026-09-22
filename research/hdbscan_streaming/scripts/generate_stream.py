@@ -87,5 +87,7 @@ def main() -> None:
     args.meta.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(meta, ensure_ascii=False))
 
+
 if __name__ == "__main__":
     main()
+

@@ -1,0 +1,284 @@
+{
+  "audit_date": "2026-09-14",
+  "benchmark_root": "/home/user/Desktop/paper/hdbscan_streaming_bench",
+  "audit_root": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419",
+  "script_count": 24,
+  "dataset_assets": [
+    {
+      "path": "data/fsdd/embeddings/fsdd_smoke.npz",
+      "n": 30,
+      "dim": 192,
+      "speakers": 6
+    },
+    {
+      "path": "data/synthetic_320.npz",
+      "n": 320,
+      "dim": 64,
+      "speakers": 8
+    },
+    {
+      "path": "data/synthetic_drift_320.npz",
+      "n": 320,
+      "dim": 64,
+      "speakers": 8
+    },
+    {
+      "path": "data/synthetic_drift_640.npz",
+      "n": 640,
+      "dim": 64,
+      "speakers": 8
+    },
+    {
+      "path": "data/synthetic_smoke.npz",
+      "n": 120,
+      "dim": 32,
+      "speakers": 5
+    }
+  ],
+  "fresh_benchmark_method_runs": 94,
+  "fresh_benchmark_status_counts": {
+    "ok": 94
+  },
+  "fresh_benchmark_run_groups": [
+    {
+      "path": "fsdd_full_baseline/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "fsdd_audio_benchmark/summary.json",
+      "methods": 7,
+      "statuses": {
+        "ok": 7
+      }
+    },
+    {
+      "path": "drift_320/summary.json",
+      "methods": 11,
+      "statuses": {
+        "ok": 11
+      }
+    },
+    {
+      "path": "fsdd_candidates/summary.json",
+      "methods": 6,
+      "statuses": {
+        "ok": 6
+      }
+    },
+    {
+      "path": "multiseed_validation/seed_20260910/fishdbc/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "multiseed_validation/seed_20260910/adaptive_fishdbc_async/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "multiseed_validation/seed_20260912/fishdbc/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "multiseed_validation/seed_20260912/adaptive_fishdbc_async/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "multiseed_validation/seed_20260911/fishdbc/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "multiseed_validation/seed_20260911/adaptive_fishdbc_async/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/adaptive_fishdbc_async_i20/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/fishdbc_i20/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/fishdbc_i5/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/adaptive_fishdbc_async_i5/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/fishdbc_i10/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/adaptive_fishdbc_async_i1/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/fishdbc_i1/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "rate_sweep/adaptive_fishdbc_async_i10/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "drift_640/summary.json",
+      "methods": 11,
+      "statuses": {
+        "ok": 11
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.85_i4/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.95_i16/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.95_i8/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.70_i8/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.70_i16/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.95_i4/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.85_i16/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.70_i4/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "tradeoff_sweep/d0.85_i8/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    },
+    {
+      "path": "synthetic_320/summary.json",
+      "methods": 11,
+      "statuses": {
+        "ok": 11
+      }
+    },
+    {
+      "path": "long_stress_640/summary.json",
+      "methods": 1,
+      "statuses": {
+        "ok": 1
+      }
+    }
+  ],
+  "fresh_error_files": [],
+  "fresh_log_count": 20,
+  "fresh_csv_count": 105,
+  "fresh_json_count": 212,
+  "historical_error_file_count": 4,
+  "historical_log_file_count": 25,
+  "tests": {
+    "compileall": "PASS",
+    "dataset_contracts": "PASS",
+    "deploy_dense_label_equivalence": "PASS",
+    "fsdd_audio_wav_to_onnx_to_cluster": "PASS",
+    "rate_sweep": "PASS",
+    "multiseed": "PASS",
+    "tradeoff_sweep": "PASS",
+    "long_stress_640": "PASS",
+    "plots": "PASS"
+  },
+  "environment": {
+    "venv_python": "Python 3.10.12",
+    "system_python": "Python 3.10.12",
+    "venv_matplotlib": "MISSING",
+    "system_matplotlib": "3.10.9",
+    "pip_check": "PASS"
+  },
+  "hashes": {
+    "paper/hdbscan_streaming_bench/requirements.txt": "3af563ad3cac9d6a9f39ea9166686beaec5eab1183fcdf62b3635a1a6b06eb33",
+    "paper/hdbscan_streaming_bench/../deploy/pretrained/eres2net_sv.onnx": "f847806875d4228d1464e83e2e1092fc318e008a9ae18d9d67e5aee87b841fbc",
+    "paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/environment-lock-final.txt": "f051dd6569af93a25df10690ba20a1f751639bb283fe44103ae62885bfb10815"
+  },
+  "scope_note": "This audit verifies the locally available reproduction assets and fresh runs. It does not establish that a formal 174-task manifest/log bundle exists; no such manifest was found in the benchmark project. The fresh audit contains 94 benchmark method runs plus contract/preflight/audio/deployment/plot checks."
+}

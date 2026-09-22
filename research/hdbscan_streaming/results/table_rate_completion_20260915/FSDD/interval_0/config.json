@@ -1,0 +1,21 @@
+{
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/fsdd_audio_embeddings.npz",
+  "n": 30,
+  "dim": 192,
+  "embedding_preprocess": "l2_row_normalize",
+  "methods": [
+    "adaptive_fishdbc_async"
+  ],
+  "cap": 20,
+  "warmup": 12,
+  "tradeoff_warmup": 12,
+  "tradeoff_margin": 0.02,
+  "tradeoff_max_distance": 0.7,
+  "tradeoff_full_interval": 8,
+  "tradeoff_batch_size": 4,
+  "tradeoff_max_queue": 8,
+  "arrival_interval_ms": 0.0,
+  "min_cluster_size": 3,
+  "min_samples": 2,
+  "checkpoint_every": 6
+}

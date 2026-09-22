@@ -1,0 +1,4 @@
+scenario,acc,ari,nmi,p95_ms,min_samples,full_interval
+light,76.667,72.169,84.877,0.165,2,8
+medium,92.000,90.870,92.943,1.327,6,12
+heavy,80.500,82.182,88.818,7.251,6,16

@@ -1,0 +1,35 @@
+{
+  "audit": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419",
+  "main_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables_loongx/canonical_main.csv",
+  "multiseed_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables_loongx/canonical_multiseed.csv",
+  "rate_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables_loongx/canonical_rate.csv",
+  "tradeoff_csv": "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_tables_loongx/canonical_tradeoff.csv",
+  "figures": [
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_figures_loongx/fig_main_results.pdf",
+    "/home/user/Desktop/paper/hdbscan_streaming_bench/results/reproduction_audit_20260914_122419/canonical_figures_loongx/fig_stability_rate.pdf"
+  ],
+  "figure_style": {
+    "reference": "LoongX_SIGCOMM2026 visual language",
+    "font_family": "sans-serif",
+    "figure_size_in": [
+      3.35,
+      2.45
+    ],
+    "colors": {
+      "full": "#202124",
+      "fish": "#003c82",
+      "ours": "#009e9a",
+      "orange": "#e69f00",
+      "purple": "#7a5195",
+      "pink": "#cc79a7",
+      "grid": "#c9cdd3",
+      "text": "#202124"
+    },
+    "export_dpi": 300,
+    "active_figures": [
+      "fig_main_results.pdf",
+      "fig_stability_rate.pdf"
+    ]
+  },
+  "status": "ok"
+}

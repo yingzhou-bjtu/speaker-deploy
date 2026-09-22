@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "data": "/home/user/Desktop/paper/hdbscan_streaming_bench/data/fsdd/embeddings/fsdd_smoke.npz",
+  "n": 30,
+  "dim": 192,
+  "min_cluster_size": 3,
+  "min_samples": 2,
+  "benchmark_matches_deploy_dense_labels": true,
+  "dense_metrics": {
+    "cluster_accuracy": 0.7333333333333333,
+    "cluster_accuracy_non_noise": 0.9565217391304348,
+    "cluster_accuracy_noise_singletons": 0.7666666666666667,
+    "pairwise_precision": 0.8837209302325582,
+    "pairwise_recall": 0.6333333333333333,
+    "false_merge_rate": 0.013333333333333334,
+    "coverage": 0.7666666666666667,
+    "ari": 0.6614785992217899,
+    "nmi": 0.805239207182306
+  },
+  "deploy_public_label_metrics": {
+    "cluster_accuracy": 0.7666666666666667,
+    "cluster_accuracy_non_noise": 0.7666666666666667,
+    "cluster_accuracy_noise_singletons": 0.7666666666666667,
+    "pairwise_precision": 0.8837209302325582,
+    "pairwise_recall": 0.6333333333333333,
+    "false_merge_rate": 0.013333333333333334,
+    "coverage": 1.0,
+    "ari": 0.7037457434733257,
+    "nmi": 0.8483110097196277
+  },
+  "deploy_noise_count": 7,
+  "deploy_public_cluster_count": 12
+}
