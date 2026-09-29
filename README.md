@@ -102,10 +102,6 @@ Representative results from the committed release bundle are shown below.
 The complete tables and raw JSON/CSV paths are in
 [`research/hdbscan_streaming/RESULTS.md`](research/hdbscan_streaming/RESULTS.md).
 
-### FlowFish mechanism
-
-![FlowFish mechanism](research/hdbscan_streaming/figures/flowfish_framework.png)
-
 ### Main comparison
 
 ![Latency and quality comparison](research/hdbscan_streaming/figures/fig_main_results.png)

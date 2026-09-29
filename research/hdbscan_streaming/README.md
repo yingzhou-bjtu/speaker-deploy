@@ -139,8 +139,6 @@ overload behavior.
 
 The selected release figures are kept in [`figures/`](figures/):
 
-![FlowFish framework](figures/flowfish_framework.png)
-
 ![Main comparison](figures/fig_main_results.png)
 
 ![Arrival-rate stability](figures/fig_stability_rate.png)
