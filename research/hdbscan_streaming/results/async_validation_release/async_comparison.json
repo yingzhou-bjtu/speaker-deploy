@@ -1,0 +1,58 @@
+[
+  {
+    "dataset": "fsdd",
+    "method": "adaptive",
+    "arrival_interval_ms": 5.0,
+    "decision_steady_mean_ms": 0.10145183427837388,
+    "decision_steady_p95_ms": 0.20711533725261683,
+    "maintenance_ms_total": 25.201410753652453,
+    "max_pending": 4,
+    "max_queue_depth": 1,
+    "recompute_count": 12,
+    "acc": 0.7666666666666667,
+    "ari": 0.7216890595009597,
+    "false_merge_rate": 0.0
+  },
+  {
+    "dataset": "fsdd",
+    "method": "fishdbc",
+    "arrival_interval_ms": 5.0,
+    "decision_steady_mean_ms": 0.9523723796331163,
+    "decision_steady_p95_ms": 1.4223810285329817,
+    "maintenance_ms_total": 27.655140962451696,
+    "max_pending": 0,
+    "max_queue_depth": 0,
+    "recompute_count": 30,
+    "acc": 0.7666666666666667,
+    "ari": 0.7216890595009597,
+    "false_merge_rate": 0.0
+  },
+  {
+    "dataset": "synthetic",
+    "method": "adaptive",
+    "arrival_interval_ms": 5.0,
+    "decision_steady_mean_ms": 0.5655796051778623,
+    "decision_steady_p95_ms": 1.5667219297029074,
+    "maintenance_ms_total": 1176.470275851898,
+    "max_pending": 4,
+    "max_queue_depth": 3,
+    "recompute_count": 94,
+    "acc": 0.9375,
+    "ari": 0.9149836149048532,
+    "false_merge_rate": 0.0
+  },
+  {
+    "dataset": "synthetic",
+    "method": "fishdbc",
+    "arrival_interval_ms": 5.0,
+    "decision_steady_mean_ms": 4.821766847029305,
+    "decision_steady_p95_ms": 8.382641756907104,
+    "maintenance_ms_total": 1538.1778572918847,
+    "max_pending": 0,
+    "max_queue_depth": 0,
+    "recompute_count": 320,
+    "acc": 0.915625,
+    "ari": 0.8780647209586576,
+    "false_merge_rate": 0.0
+  }
+]

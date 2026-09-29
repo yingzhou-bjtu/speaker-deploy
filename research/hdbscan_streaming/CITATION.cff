@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use FlowFish or the accompanying reproduction package, please cite it."
+title: "FlowFish: Selective Density Maintenance for Low-Latency Streaming Speaker Clustering"
+type: software
+version: "0.1.0"
+date-released: 2026-09-28
+repository-code: "https://github.com/yingzhou-bjtu/speaker-deploy"
+keywords:
+  - streaming speaker clustering
+  - speaker diarization
+  - density clustering
+  - selective maintenance
+authors:
+  - family-names: Liu
+    given-names: Jiayu
+  - family-names: Yang
+    given-names: Lanlan
+  - family-names: Tan
+    given-names: Kaizhong
+  - family-names: Yu
+    given-names: Zhiwei
+  - family-names: Chen
+    given-names: Ziyang
+  - family-names: Zhou
+    given-names: Ying
+  - family-names: Xie
+    given-names: Renjie

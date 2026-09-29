@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Runtime state
+speaker_registry.npz
+*.npz
+
+.DS_Store
+*.log
+/tmp/
+*.tgz

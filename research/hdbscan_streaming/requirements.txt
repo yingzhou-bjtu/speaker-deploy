@@ -1,0 +1,12 @@
+numpy
+scipy
+scikit-learn
+hdbscan
+Cython>=3.0
+wheel
+numba
+pynndescent
+onnxruntime>=1.16
+kaldi-native-fbank>=1.20
+soundfile>=0.12
+matplotlib>=3.7
