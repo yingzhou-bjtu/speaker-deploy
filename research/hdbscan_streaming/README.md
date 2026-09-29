@@ -27,6 +27,7 @@ the manuscript to the benchmark driver.
 | Release bundle | `scripts/reproduce_paper.sh release` | all four `*_release/` directories |
 | Paper-scale rerun | `scripts/run_final_rerun.sh` | `results/final_rerun_release/` |
 | Figure generation | `scripts/generate_formal_icaspp_figures.py` | a user-selected figure directory |
+| Dataset download | `scripts/download_fsdd.sh` | `data/fsdd/raw/` |
 
 The committed `results/` tree contains the portable release evidence intended
 for reproduction. Exploratory records and operational notes are kept outside
@@ -34,18 +35,17 @@ the public research package.
 
 ## Quick Start
 
-From this directory:
+From this directory, the complete release reproduction is:
 
 ```bash
-bash scripts/setup_research_env.sh
-python3 scripts/check_release.py
-bash scripts/run_synthetic_smoke.sh
+bash scripts/reproduce_paper.sh all
 ```
 
-The environment script creates `.venv`, installs `requirements.txt`, and
-builds the checked-in FISHDBC extension under `vendor/flexible_clustering/`.
-The smoke command uses the committed synthetic fixture and does not download
-audio or model weights.
+The dispatcher also exposes `setup`, `data`, `audio`, `baseline`, `smoke`,
+`release`, and `main` modes. `data` downloads the pinned FSDD archive, verifies
+its checksum and 3000 WAV files, and writes the local provenance record. The
+release benchmark uses committed embedding fixtures and therefore does not
+require raw audio.
 
 To run the main asynchronous comparison:
 
@@ -81,9 +81,29 @@ The longer main-table rerun is:
 bash scripts/reproduce_paper.sh main
 ```
 
-It uses the committed FSDD embedding fixtures. The raw FSDD audio is not
-included. See [`data/fsdd/PROVENANCE.md`](data/fsdd/PROVENANCE.md) for the
-upstream source, license, and deterministic subset description.
+It uses the committed FSDD embedding fixtures. See
+[`data/fsdd/PROVENANCE.md`](data/fsdd/PROVENANCE.md) for the pinned upstream
+source, license, checksum, and deterministic subset description.
+
+To regenerate the real-audio input from the pinned FSDD archive, provide a
+local ONNX speaker-embedding model whose first input accepts 80-bin FBank
+features:
+
+```bash
+bash scripts/reproduce_paper.sh data
+FSDD_MODEL=/path/to/speaker_embedding.onnx bash scripts/run_audio_smoke.sh
+```
+
+The audio path is split into three explicit steps:
+`prepare_fsdd_audio.py` creates the seeded speaker-balanced manifest,
+`audio_to_embeddings.py` converts the manifest to the common `X`/`y` NPZ
+contract, and `run_audio_smoke.sh` executes the clustering comparison. The
+model file is an external input and is never copied into this repository. For
+a fixture-only baseline, run:
+
+```bash
+bash scripts/run_full_baseline.sh
+```
 
 ## Method and Metrics
 
@@ -127,6 +147,23 @@ The selected release figures are kept in [`figures/`](figures/):
 
 The PNG files are provided for GitHub rendering. The PDF framework figure and
 the plotting scripts preserve publication-quality assets for the paper build.
+
+## Script Index
+
+| Script | Role |
+| --- | --- |
+| `scripts/reproduce_paper.sh` | unified setup, data, smoke, release, and main dispatcher |
+| `scripts/download_fsdd.sh` | pinned FSDD download, checksum, extraction, and provenance |
+| `scripts/prepare_fsdd_audio.py` | deterministic balanced audio manifest |
+| `scripts/audio_to_embeddings.py` | standalone ONNX audio-to-embedding conversion |
+| `scripts/run_audio_smoke.sh` | real-audio embedding and clustering smoke |
+| `scripts/run_full_baseline.sh` | fixture-only Full HDBSCAN baseline |
+| `scripts/run_benchmark.py` | common benchmark driver and metrics |
+| `scripts/run_async_validation.sh` | paired FlowFish/FISHDBC comparison |
+| `scripts/run_rate_sweep.py` | arrival-rate sensitivity |
+| `scripts/run_multiseed_validation.py` | five-seed robustness |
+| `scripts/run_final_rerun.sh` | L/M/H paper-scale rerun |
+| `scripts/generate_formal_icaspp_figures.py` | publication-style figure generation |
 
 Fresh server-side release checks are stored separately from the historical
 evidence:

@@ -28,6 +28,11 @@ def main() -> int:
         ROOT / "RESULTS.md",
         ROOT / "CITATION.cff",
         ROOT / "scripts/reproduce_paper.sh",
+        ROOT / "scripts/download_fsdd.sh",
+        ROOT / "scripts/prepare_fsdd_audio.py",
+        ROOT / "scripts/audio_to_embeddings.py",
+        ROOT / "scripts/run_audio_smoke.sh",
+        ROOT / "scripts/run_full_baseline.sh",
         ROOT / "figures/fig_main_results.png",
         ROOT / "figures/fig_stability_rate.png",
         ROOT / "figures/flowfish_framework.png",
@@ -43,6 +48,19 @@ def main() -> int:
     missing = [str(path) for path in required if not path.exists()]
     if missing:
         print("missing release files:", *missing, sep="\n", file=sys.stderr)
+        return 1
+    non_executable = [
+        str(path)
+        for path in required
+        if path.suffix == ".sh" and not path.stat().st_mode & 0o111
+    ]
+    if non_executable:
+        print(
+            "release shell scripts are not executable:",
+            *non_executable,
+            sep="\n",
+            file=sys.stderr,
+        )
         return 1
 
     forbidden_tokens = (

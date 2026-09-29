@@ -7,6 +7,7 @@ __pycache__/
 .eggs/
 dist/
 build/
+research/hdbscan_streaming/data/fsdd/raw/
 
 # Runtime state
 speaker_registry.npz

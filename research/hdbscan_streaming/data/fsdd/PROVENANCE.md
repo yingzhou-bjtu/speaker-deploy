@@ -1,11 +1,14 @@
 # FSDD local dataset
 
 - Source repository: https://github.com/Jakobovski/free-spoken-digit-dataset
-- Download URL: https://codeload.github.com/Jakobovski/free-spoken-digit-dataset/tar.gz/refs/heads/master
-- Archive: `data/fsdd/raw/free-spoken-digit-dataset-master.tar.gz`
-- Archive SHA256: f66f24f7cd07407ef35d47687fb167b9773b875b67aa181ae851b4ce47a33c28
+- Pinned commit: 26eb9aaf76e81b692f806f9140c2d2777410d7a1
+- Download URL: https://codeload.github.com/Jakobovski/free-spoken-digit-dataset/tar.gz/26eb9aaf76e81b692f806f9140c2d2777410d7a1
+- Archive: `data/fsdd/raw/free-spoken-digit-dataset-26eb9aaf76e81b692f806f9140c2d2777410d7a1.tar.gz`
+- Archive SHA256: 9a68686ad29274bd0affde81b244953e677c9d7048dfb8acaf1168d7758bafab
 - Verified WAV count: 3000
 - License: CC BY-SA 4.0, as declared by the upstream repository
 
-The raw archive and extracted files are retained locally. The benchmark only
-uses a deterministic subset described by the generated manifest.
+The raw archive and extracted files are local inputs and are not committed.
+The public benchmark uses committed derived embedding fixtures. The generated
+manifest and embedding preparation path are separate from the release
+reproduction command.
